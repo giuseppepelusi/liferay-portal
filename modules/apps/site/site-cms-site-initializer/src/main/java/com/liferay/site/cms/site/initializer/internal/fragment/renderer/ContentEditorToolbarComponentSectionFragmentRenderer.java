@@ -159,16 +159,13 @@ public class ContentEditorToolbarComponentSectionFragmentRenderer
 						themeDisplay.getLocale(), "translate-x", title);
 				}
 
-				if (Validator.isNotNull(
-						objectEntry.getTitleValue(
-							themeDisplay.getLanguageId(), true))) {
-
+				if (ParamUtil.getBoolean(httpServletRequest, "isNew")) {
 					return language.format(
-						themeDisplay.getLocale(), "edit-x", title);
+						themeDisplay.getLocale(), "new-x", title);
 				}
 
 				return language.format(
-					themeDisplay.getLocale(), "new-x", title);
+					themeDisplay.getLocale(), "edit-x", title);
 			}
 		).put(
 			"type",
